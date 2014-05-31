@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -15,7 +14,6 @@ public class EditorUpdate : MonoBehaviour
 #if UNITY_EDITOR
 	private HashSet<MonoBehaviour> _monoBehaviours;
 
-	[UsedImplicitly]
 	protected void Awake()
 	{
 		if (Application.isPlaying)
@@ -40,7 +38,6 @@ public class EditorUpdate : MonoBehaviour
 		}
 	}
 
-	[UsedImplicitly]
 	protected void Update()
 	{
 		if (Application.isPlaying)
@@ -63,7 +60,6 @@ public class EditorUpdate : MonoBehaviour
 		}
 	}
 
-	[UsedImplicitly]
 	protected void OnRenderObject()
 	{
 		if (Application.isPlaying)
