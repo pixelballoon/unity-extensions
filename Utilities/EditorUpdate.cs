@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -23,7 +21,7 @@ public class EditorUpdate : MonoBehaviour
 
 		foreach (GameObject go in gameObjects)
 		{
-			if (PrefabUtility.GetPrefabType(go) == PrefabType.Prefab)
+			if (go == null || PrefabUtility.GetPrefabType(go) == PrefabType.Prefab)
 				continue;
 
 			foreach (MonoBehaviour mb in go.GetComponents<MonoBehaviour>())
@@ -45,7 +43,7 @@ public class EditorUpdate : MonoBehaviour
 
 		foreach (GameObject go in Selection.gameObjects)
 		{
-			if (PrefabUtility.GetPrefabType(go) == PrefabType.Prefab)
+			if (go == null || PrefabUtility.GetPrefabType(go) == PrefabType.Prefab)
 				continue;
 
 			foreach (MonoBehaviour mb in go.GetComponents<MonoBehaviour>())
@@ -78,7 +76,7 @@ public class EditorUpdate : MonoBehaviour
 		{
 			foreach (GameObject go in Selection.gameObjects)
 			{
-				if (PrefabUtility.GetPrefabType(go) == PrefabType.Prefab)
+				if (go == null || PrefabUtility.GetPrefabType(go) == PrefabType.Prefab)
 					continue;
 
 				foreach (MonoBehaviour mb in go.GetComponents<MonoBehaviour>())
